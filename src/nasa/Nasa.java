@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.*;
-import java.lang.reflect.Modifier;
+
 import java.util.StringTokenizer;
 import javax.swing.text.DefaultEditorKit;
 
@@ -17,7 +17,7 @@ public class Nasa extends JFrame implements ActionListener {
     JMenuBar menuBar;
     JMenu menuFile, menuEdit, menuAbout;
 
-    JMenuItem Open, Save, SaveAs, Exit, cut, copy, paste, team, selectall;
+    JMenuItem Open, Save, SaveAs, Exit, cut, copy, paste, team;
     JFileChooser fileChooser;
     File fp;
     ImageIcon icon;
@@ -47,7 +47,7 @@ public class Nasa extends JFrame implements ActionListener {
         SaveAs = new JMenuItem("Save as");
         Exit = new JMenuItem("Exit");
         team = new JMenuItem("Team");
-        //selectall=new JMenuItem("SelectAll");
+        
 
         cut = new JMenuItem(new DefaultEditorKit.CutAction());
 
@@ -81,7 +81,7 @@ public class Nasa extends JFrame implements ActionListener {
 
         menuEdit.add(copy);
         menuEdit.add(paste);
-        //menuEdit.add(selectall);
+    
 
         menuAbout.add(team);
 
@@ -159,11 +159,7 @@ public class Nasa extends JFrame implements ActionListener {
             JOptionPane jp = new JOptionPane();
             jp.showMessageDialog(this, "Nasar_Muntaqim_Omi_Suma", "The Brogrammers", 1);
 
-        } else if (e.getSource() == selectall) {
-
-            String content = textArea.getText();
-
-        }
+        } 
     }
 
     private void save() {
